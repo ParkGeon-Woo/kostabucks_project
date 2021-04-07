@@ -22,3 +22,10 @@ Kostabucks
 - Git & GitHub
 - Aquery Tool(데이터베이스 모델링)
 
+# Our Teams
+PM : 조익호
+PL : 최예만
+PE : 한종혁, 박건
+화면설계 : 박건우
+DB설계 : 한종혁
+클래스설계 : 최예만
