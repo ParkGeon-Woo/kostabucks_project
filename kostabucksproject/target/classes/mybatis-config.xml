@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <properties>
+  	<property name="username" value="ym"/>
+  </properties>
+  <!-- <settings>
+  	<setting name="jdbcTypeForNull" value="Null"/>
+  </settings> -->
+  <typeAliases>
+  	<typeAlias alias="Category" type="com.my.vo.Category"/>
+  	<typeAlias alias="Drink" type="com.my.vo.Drink"/>
+  	
+  </typeAliases>
+  <mappers>
+  	<mapper resource="categoryMapper.xml"/>
+  	<mapper resource="drinkMapper.xml"/>
+	
+  </mappers>
+</configuration>

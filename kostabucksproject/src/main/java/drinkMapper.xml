@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.DrinkMapper">
+	<resultMap type="Category" id="categoryMap">
+		<id property="category_name" column="category_name" />
+		<id property="category_no" column="category_no" />
+	</resultMap>
+	<resultMap type="Drink" id="drinkJoinMap">
+		<id property="drink_no" column="drink_no" />
+		<id property="drink_theme_no" column="drink_theme_no" />
+		<id property="drink_nutrition_no" column="drink_nutrition_no" />
+		<id property="drink_explanation_no" column="drink_explanation_no" />
+		<id property="drink_allergy_no" column="drink_allergy_no" />
+		<id property="drink_origin_no" column="drink_origin_no" />
+		<id property="drink_release_date" column="drink_release_date" />
+		<id property="drink_name_kor" column="drink_name_kor" />
+		<id property="drink_name_eng" column="drink_name_eng" />
+		<id property="drink_caffeine" column="drink_caffeine" />
+		<id property="drink_price" column="drink_price" />
+		<id property="drink_limited_flag" column="drink_limited_flag" />
+		<id property="drink_category_no" column="drink_category_no" />
+		<collection property="category" resultMap="categoryMap" />
+	</resultMap>
+
+	<!-- 상품전체 검색 -->
+	<select id="selectAll" resultMap="drinkJoinMap">
+		select * from drink d INNER JOIN category c ON d.drink_category_no =
+		c.category_no ORDER BY category_no ASC, drink_name_kor DESC
+	</select>
+</mapper>

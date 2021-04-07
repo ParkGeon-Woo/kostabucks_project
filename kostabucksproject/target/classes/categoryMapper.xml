@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.CategoryMapper">
+	
+	<!-- 카테고리전체 검색 -->
+	<select id="selectAll" resultMap="categoryMap">
+		SELECT * FROM category ORDER BY category_no
+	</select>
+	
+	<!-- 해당 카테고리 검색 -->
+	<select id="selectByNo" resultMap="categoryMap">
+		SELECT * FROM category WHERE category_no=#{category_no}
+	</select>
+</mapper>
